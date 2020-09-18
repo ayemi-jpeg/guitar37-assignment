@@ -10,7 +10,7 @@ public class NewInstrument implements Instrument {
     // Created a string variable to include the alphabet layout from a keyboard
     // Stored it into an array, 1 index = 1 letter
     ArrayList<Character> key = new ArrayList<Character>();
-    String alphas = "qwertyuiopasdfghjklzxcvbnm";
+    String alphas = "qwertyuiopasdfghjklzxcvbnm1234567890";
 
     public NewInstrument() {
         // Made a for each loop to read in each string and add it to array
@@ -48,7 +48,7 @@ public class NewInstrument implements Instrument {
        // to replace its values with random numbers from -0.5,0.5.
         for(int w = 0; w < keys.size(); w++)
         {
-            double randoNum = -0.5 + (Math.random() * ((0.5-(-0.5))+1));
+            double randoNum = Math.random() - 0.5;
             keys.set(w, randoNum);
         }
     }
@@ -63,7 +63,7 @@ public class NewInstrument implements Instrument {
             Double firstNum = guitarStrings.get(x).get(0);
             Double secondNum = guitarStrings.get(x).get(1);
             Double average = (firstNum * secondNum) / 2.0;
-            Double result = average * 0.800;
+            Double result = average * 0.994;
 
             guitarStrings.get(x).add(result);
             guitarStrings.get(x).remove(0);
