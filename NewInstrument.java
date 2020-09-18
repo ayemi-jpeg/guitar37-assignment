@@ -39,13 +39,13 @@ public class NewInstrument implements Instrument {
 
     public void pluck(char key) {
        
-        //Created int to store the position of the key that is being searched in the String alphas.
-        //Used the int to get its index from guitarStrings and storing it into a new LinkedList.
+        // Created int to store the position of the key that is being searched in the String alphas.
+        // Used the int to get its index from guitarStrings and storing it into a new LinkedList.
        int Index = alphas.indexOf(key); 
        LinkedList<Double> keys = guitarStrings.get(Index);
     
-       //Made a for-loop to traverse through all of the values of the new LinkedList
-       //to replace its values with random numbers from -0.5,0.5.
+       // Made a for-loop to traverse through all of the values of the new LinkedList
+       // to replace its values with random numbers from -0.5,0.5.
         for(int w = 0; w < keys.size(); w++)
         {
             double randoNum = -0.5 + (Math.random() * ((0.5-(-0.5))+1));
@@ -55,9 +55,9 @@ public class NewInstrument implements Instrument {
 
     public void tick() {
 
-        //Looped through entire guitarStrings.
-        //For every x position/buffer, I retrieved every first and second values.
-        //I did the math then added it to the list and removed the first item of the list.
+        // Looped through entire guitarStrings.
+        // For every x position/buffer, I retrieved every first and second values.
+        // I did the math then added it to the list and removed the first item of the list.
         for (int x = 0; x < guitarStrings.size(); x++)
         {
             Double firstNum = guitarStrings.get(x).get(0);
@@ -73,10 +73,10 @@ public class NewInstrument implements Instrument {
 
     public double superposition(){
        
-        //I created a double variable to use in my for loop.
-        //In my for loop I traversed through the entirety of guitarStrings.
-        //For every buffer 'u', I got the first index of it and added it all up
-        //then I returned its value. Ta-da! :D
+        // I created a double variable to use in my for loop.
+        // In my for loop I traversed through the entirety of guitarStrings.
+        // For every buffer 'u', I got the first index of it and added it all up
+        // then I returned its value. Ta-da! :D
         double sum = 0;
         for (int u = 0; u < guitarStrings.size(); u++)
         {
